@@ -58,7 +58,13 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
     @Override
     protected void onResume() {
-
+        if(isAnalog) {
+            digitalClock.setVisibility(View.GONE);
+            analogClock.setVisibility(View.VISIBLE);
+        } else {
+            digitalClock.setVisibility(View.VISIBLE);
+            analogClock.setVisibility(View.GONE);
+        }
         super.onResume();
     }
 
